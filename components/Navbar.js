@@ -4,14 +4,13 @@ import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <nav className="bg-gray-900 text-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-extrabold tracking-wide">
+        {/* Brand Title */}
+        <Link href="/" className="text-2xl font-bold tracking-wide text-blue-400">
           StatixGrowth
         </Link>
 
@@ -28,21 +27,24 @@ export default function Navbar() {
         <button
           onClick={toggleMenu}
           className="md:hidden text-white focus:outline-none"
+          aria-label="Toggle navigation menu"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* Mobile Nav */}
-      {isOpen && (
-        <div className="md:hidden bg-gray-900 px-4 pb-4 space-y-4 text-center text-base font-medium">
-          <Link href="/" className="block hover:text-blue-400">Home</Link>
-          <Link href="/about" className="block hover:text-blue-400">About</Link>
-          <Link href="/services" className="block hover:text-blue-400">Services</Link>
-          <Link href="/case-study" className="block hover:text-blue-400">Case Studies</Link>
-          <Link href="/contact" className="block hover:text-blue-400">Contact</Link>
-        </div>
-      )}
+      <div
+        className={`md:hidden bg-gray-900 px-4 pt-2 pb-4 text-center text-base font-medium transition-all duration-300 ${
+          isOpen ? 'block' : 'hidden'
+        }`}
+      >
+        <Link href="/" className="block py-2 hover:text-blue-400">Home</Link>
+        <Link href="/about" className="block py-2 hover:text-blue-400">About</Link>
+        <Link href="/services" className="block py-2 hover:text-blue-400">Services</Link>
+        <Link href="/case-study" className="block py-2 hover:text-blue-400">Case Studies</Link>
+        <Link href="/contact" className="block py-2 hover:text-blue-400">Contact</Link>
+      </div>
     </nav>
   );
 }
