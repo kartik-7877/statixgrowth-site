@@ -14,13 +14,19 @@ export default function HeroSection() {
           At <span className="font-semibold text-white">StatixGrowth</span>, we turn raw data into actionable
           strategies that unlock revenue opportunities, improve conversions, and help you outperform competitors.
         </p>
-        <button className="mt-8 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow">
-          Book a Free Strategy Call
-        </button>
+        <a
+          href="https://kartikbhask.systeme.io/job-to-business-ebook-f337b6f0-7796dda8"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow"
+        >
+          Unlock Sales Growth
+        </a>
       </div>
     </section>
   );
 }
+
 
 
 
