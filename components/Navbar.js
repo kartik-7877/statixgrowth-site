@@ -19,7 +19,7 @@ export default function Navbar() {
           <Link href="/" className="hover:text-blue-400">Home</Link>
           <Link href="/about" className="hover:text-blue-400">About</Link>
           <Link href="/services" className="hover:text-blue-400">Services</Link>
-          <Link href="/case-study" className="hover:text-blue-400">Case Studies</Link>
+          <Link href="/casestudy" className="hover:text-blue-400">Case Studies</Link>
           <Link href="/contact" className="hover:text-blue-400">Contact</Link>
         </div>
 
@@ -42,12 +42,15 @@ export default function Navbar() {
         <Link href="/" className="block py-2 hover:text-blue-400">Home</Link>
         <Link href="/about" className="block py-2 hover:text-blue-400">About</Link>
         <Link href="/services" className="block py-2 hover:text-blue-400">Services</Link>
-        <Link href="/case-study" className="block py-2 hover:text-blue-400">Case Studies</Link>
+        <Link href="/casestudy" className="block py-2 hover:text-blue-400">Case Studies</Link>
         <Link href="/contact" className="block py-2 hover:text-blue-400">Contact</Link>
       </div>
     </nav>
   );
 }
+
+
+
 
 
 
