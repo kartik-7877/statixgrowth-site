@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
         
         {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-8 text-base font-medium justify-start">  {/* Align to left */}
+        <div className="hidden md:flex space-x-8 text-base font-medium justify-start">
           <Link href="/" className="hover:text-blue-400">Home</Link>
           <Link href="/about" className="hover:text-blue-400">About</Link>
           <Link href="/services" className="hover:text-blue-400">Services</Link>
@@ -19,7 +19,7 @@ export default function Navbar() {
           <Link href="/contact" className="hover:text-blue-400">Contact</Link>
         </div>
 
-        {/* Hamburger */}
+        {/* Hamburger Menu (on mobile, aligns to the right) */}
         <button
           onClick={toggleMenu}
           className="md:hidden text-white focus:outline-none"
@@ -44,6 +44,7 @@ export default function Navbar() {
     </nav>
   );
 }
+
 
 
 
