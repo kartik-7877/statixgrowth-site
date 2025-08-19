@@ -72,22 +72,22 @@ export default function HeroSection() {
       {/* Background */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
-      {/* Logo - larger now */}
-      <div className="absolute top-3 left-3 z-20">
+      {/* PNG Logo - fixed top-left */}
+      <div className="absolute top-4 left-4 z-20">
         <img
           src="/logo-white.png"
           alt="StatixGrowth Logo"
-          className="h-14 sm:h-16 md:h-20 lg:h-28 w-auto"
+          className="h-10 sm:h-12 md:h-16 lg:h-20 w-auto"
         />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-3xl mt-6 md:mt-16">
+      <div className="relative z-10 text-center px-6 max-w-3xl mt-20 sm:mt-24">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight text-white mb-4"
+          className="text-xl sm:text-3xl md:text-5xl font-bold leading-tight text-white mb-4"
         >
           Data-Powered Strategies for Next-Level Business Growth
         </motion.h1>
@@ -96,7 +96,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="mt-4 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto"
+          className="mt-4 text-sm sm:text-base md:text-lg text-gray-300 max-w-md sm:max-w-2xl mx-auto"
         >
           We transform numbers into growth — empowering e-commerce, real estate,
           local services, and digital products with insights that unlock sales,
