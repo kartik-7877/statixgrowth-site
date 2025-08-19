@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export default function HeroSection() {
   const canvasRef = useRef(null);
 
-  // Background animation (flowing lines & glowing points)
+  // Background animation
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -21,10 +21,9 @@ export default function HeroSection() {
 
     function draw() {
       ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = "#14052A"; // deep gradient background feel
+      ctx.fillStyle = "#14052A";
       ctx.fillRect(0, 0, width, height);
 
-      // Draw points
       points.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
@@ -38,7 +37,6 @@ export default function HeroSection() {
         ctx.fill();
       });
 
-      // Draw connecting lines
       for (let i = 0; i < points.length; i++) {
         for (let j = i + 1; j < points.length; j++) {
           const dx = points[i].x - points[j].x;
@@ -71,16 +69,16 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden font-[Montserrat]">
-      {/* Background Canvas */}
+      {/* Background */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
+
+      {/* Logo - bottom left of hero */}
+      <div className="absolute left-6 top-8 md:top-12 z-10">
+        <img src="/logo-white.png" alt="StatixGrowth Logo" className="h-14 md:h-20" />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-3xl">
-        {/* Logo placeholder */}
-        <div className="flex justify-center mb-6">
-          <img src="/logo-white.png" alt="Logo" className="h-12" />
-        </div>
-
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -107,14 +105,24 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.6 }}
           className="mt-8"
         >
-          <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow">
-            Book a Strategy Call
-          </Button>
+          <a
+            href="https://kartikbhask.systeme.io/j2bebook-oto-call-ea16ec82-f57c408e"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              size="lg"
+              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow"
+            >
+              Book a Strategy Call
+            </Button>
+          </a>
         </motion.div>
       </div>
     </section>
   );
 }
+
 
 
 
