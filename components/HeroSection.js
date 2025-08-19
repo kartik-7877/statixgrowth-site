@@ -78,10 +78,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-3xl">
-        {/* Logo positioned at the top-left and resized */}
-        <div className="absolute top-5 left-5">
-          <img src="/logo-white.png" alt="Logo" className="h-24 md:h-28" />
-        </div>
+        {/* Logo has been removed from here */}
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -109,14 +106,18 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.6 }}
           className="mt-8"
         >
-          <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow">
-            Book a Strategy Call
-          </Button>
+          {/* Wrapping the Button with an anchor tag */}
+          <a href="https://kartikbhask.systeme.io/j2bebook-oto-call-ea16ec82-f57c408e" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow">
+              Book a Strategy Call
+            </Button>
+          </a>
         </motion.div>
       </div>
     </section>
   );
 }
+
 
 
 

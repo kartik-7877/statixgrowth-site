@@ -1,48 +1,118 @@
-// components/ServicesSection.js
+import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
-import React from "react";
-import { FaLightbulb, FaChartBar, FaRocket } from "react-icons/fa";
+// Ensure you have a Button component in the correct path
+import { Button } from "@/components/ui/button"; // Adjust the import path as needed
 
-export default function ServicesSection() {
+export default function HeroSection() {
+  const canvasRef = useRef(null);
+
+  // Background animation (flowing lines & glowing points)
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    const points = Array.from({ length: 50 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: (Math.random() - 0.5) * 0.5,
+    }));
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = "#14052A"; // deep gradient background feel
+      ctx.fillRect(0, 0, width, height);
+
+      // Draw points
+      points.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(0, 200, 255, 0.8)";
+        ctx.fill();
+      });
+
+      // Draw connecting lines
+      for (let i = 0; i < points.length; i++) {
+        for (let j = i + 1; j < points.length; j++) {
+          const dx = points[i].x - points[j].x;
+          const dy = points[i].y - points[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 150) {
+            ctx.beginPath();
+            ctx.moveTo(points[i].x, points[i].y);
+            ctx.lineTo(points[j].x, points[j].y);
+            ctx.strokeStyle = `rgba(0, 200, 255, ${1 - dist / 150})`;
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+
+    const handleResize = () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <section className="bg-gradient-to-r from-purple-800 to-blue-800 text-white py-16 px-6">
-      <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">💡 What We Offer</h2>
-        <p className="text-lg md:text-xl text-gray-200">
-          Get expert insights and proven strategies to grow your business faster.
-        </p>
-      </div>
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden font-[Montserrat]">
+      {/* Background Canvas */}
+      <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Service 1 */}
-        <div className="bg-purple-700 bg-opacity-20 backdrop-blur-md p-6 rounded-xl text-center shadow-md hover:scale-105 transition-transform">
-          <FaLightbulb className="text-pink-400 text-4xl mx-auto mb-4" />
-          <h3 className="text-xl font-semibold mb-2">Data-Driven Strategy Calls</h3>
-          <p className="text-gray-200">
-            One-on-one consultations where we analyze your sales funnel and uncover growth levers.
-          </p>
-        </div>
+      {/* Content */}
+      <div className="relative z-10 text-center px-6 max-w-3xl">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight text-white mb-4"
+        >
+          Data-Powered Strategies for Next-Level Business Growth
+        </motion.h1>
 
-        {/* Service 2 */}
-        <div className="bg-purple-700 bg-opacity-20 backdrop-blur-md p-6 rounded-xl text-center shadow-md hover:scale-105 transition-transform">
-          <FaChartBar className="text-purple-400 text-4xl mx-auto mb-4" />
-          <h3 className="text-xl font-semibold mb-2">Sales Funnel Optimization</h3>
-          <p className="text-gray-200">
-            We audit your current process and improve your conversion steps to make every click count.
-          </p>
-        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="mt-6 sm:mt-4 text-lg text-gray-300"
+        >
+          We transform numbers into growth — empowering e-commerce, real estate,
+          local services, and digital products with insights that unlock sales,
+          leads, and sustainable success.
+        </motion.p>
 
-        {/* Service 3 */}
-        <div className="bg-purple-700 bg-opacity-20 backdrop-blur-md p-6 rounded-xl text-center shadow-md hover:scale-105 transition-transform">
-          <FaRocket className="text-blue-400 text-4xl mx-auto mb-4" />
-          <h3 className="text-xl font-semibold mb-2">Growth Acceleration Plan</h3>
-          <p className="text-gray-200">
-            A tailored 30-day roadmap built from deep insights, giving you clear action steps to increase growth.
-          </p>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="mt-8"
+        >
+          <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow">
+            Book a Strategy Call
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
 }
+
+
 
 
