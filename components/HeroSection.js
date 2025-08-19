@@ -73,16 +73,16 @@ export default function HeroSection() {
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
       {/* Logo - fixed top left */}
-      <div className="absolute top-6 left-6 z-20">
+      <div className="absolute top-4 left-4 z-20">
         <img
           src="/logo-white.png"
           alt="StatixGrowth Logo"
-          className="h-36 md:h-40 lg:h-44 w-auto"
+          className="h-28 md:h-36 lg:h-40 w-auto"
         />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-3xl mt-6 md:mt-16">
+      <div className="relative z-10 text-center px-6 max-w-3xl mt-8 md:mt-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
