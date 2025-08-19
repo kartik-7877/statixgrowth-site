@@ -77,7 +77,7 @@ export default function HeroSection() {
         <img
           src="/logo-white.png"
           alt="StatixGrowth Logo"
-          className="h-16 md:h-20 w-auto"
+          className="h-20 w-auto"
         />
       </div>
 
@@ -87,7 +87,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight text-white mb-3 md:mb-4"
+          className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight text-white mb-4"
         >
           Data-Powered Strategies for Next-Level Business Growth
         </motion.h1>
