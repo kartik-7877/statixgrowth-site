@@ -68,22 +68,26 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden font-[Montserrat]">
+    <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden font-[Montserrat]">
       {/* Background */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
-      {/* Logo - bottom left of hero */}
-      <div className="absolute left-6 top-8 md:top-12 z-10">
-        <img src="/logo-white.png" alt="StatixGrowth Logo" className="h-14 md:h-20" />
+      {/* Logo - fixed top left */}
+      <div className="absolute top-6 left-6 z-20">
+        <img
+          src="/logo-white.png"
+          alt="StatixGrowth Logo"
+          className="h-16 md:h-20 w-auto"
+        />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-3xl">
+      <div className="relative z-10 text-center px-6 max-w-3xl mt-12 md:mt-0">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-5xl font-bold leading-tight text-white mb-4"
+          className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight text-white mb-3 md:mb-4"
         >
           Data-Powered Strategies for Next-Level Business Growth
         </motion.h1>
@@ -92,7 +96,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="mt-6 text-lg text-gray-300"
+          className="mt-4 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto"
         >
           We transform numbers into growth — empowering e-commerce, real estate,
           local services, and digital products with insights that unlock sales,
@@ -103,7 +107,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mt-8"
+          className="mt-6 md:mt-8"
         >
           <a
             href="https://kartikbhask.systeme.io/j2bebook-oto-call-ea16ec82-f57c408e"
@@ -122,6 +126,7 @@ export default function HeroSection() {
     </section>
   );
 }
+
 
 
 
