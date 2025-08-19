@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { Menu, X } from 'react-feather'; // Assuming you're using Feather icons
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -19,8 +22,12 @@ export default function Navbar() {
           <Link href="/contact" className="hover:text-blue-400">Contact</Link>
         </div>
 
-        {/* Hamburger */}
-        <button onClick={toggleMenu} className="md:hidden text-white focus:outline-none" aria-label="Toggle navigation menu">
+        {/* Hamburger Button */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden text-white focus:outline-none"
+          aria-label="Toggle navigation menu"
+        >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
@@ -40,6 +47,7 @@ export default function Navbar() {
     </nav>
   );
 }
+
 
 
 
