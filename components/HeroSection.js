@@ -77,7 +77,7 @@ export default function HeroSection() {
         <img
           src="/logo-white.png"
           alt="StatixGrowth Logo"
-          className="h-24 md:h-28 w-auto"
+          className="h-24 md:h-32 lg:h-36 w-auto"
         />
       </div>
 
