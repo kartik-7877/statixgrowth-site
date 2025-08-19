@@ -77,12 +77,12 @@ export default function HeroSection() {
         <img
           src="/logo-white.png"
           alt="StatixGrowth Logo"
-          className="h-28 md:h-36 lg:h-40 w-auto"
+          className="h-32 md:h-36 lg:h-40 w-auto"
         />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-3xl mt-8 md:mt-16">
+      <div className="relative z-10 text-center px-6 max-w-3xl mt-6 md:mt-16">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -126,6 +126,7 @@ export default function HeroSection() {
     </section>
   );
 }
+
 
 
 
