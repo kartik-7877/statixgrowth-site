@@ -73,7 +73,7 @@ export default function HeroSection() {
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
       {/* Logo - fixed top left */}
-      <div className="absolute top-6 left-6 z-20">
+      <div className="absolute top-2 left-2 z-20">
         <img
           src="/logo-white.png"
           alt="StatixGrowth Logo"
@@ -126,6 +126,7 @@ export default function HeroSection() {
     </section>
   );
 }
+
 
 
 
