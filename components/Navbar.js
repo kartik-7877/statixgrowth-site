@@ -9,11 +9,7 @@ export default function Navbar() {
   return (
     <nav className="bg-gray-900 text-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Brand Title */}
-        <Link href="/" className="text-2xl font-bold tracking-wide text-blue-400">
-          StatixGrowth
-        </Link>
-
+        
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-8 text-base font-medium">
           <Link href="/" className="hover:text-blue-400">Home</Link>
@@ -48,6 +44,7 @@ export default function Navbar() {
     </nav>
   );
 }
+
 
 
 
