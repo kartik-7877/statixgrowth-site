@@ -80,7 +80,7 @@ export default function HeroSection() {
       <div className="relative z-10 text-center px-6 max-w-3xl">
         {/* Logo positioned at the top-left and resized */}
         <div className="absolute top-5 left-5">
-          <img src="/logo-white.png" alt="Logo" className="h-20 md:h-24" />
+          <img src="/logo-white.png" alt="Logo" className="h-24 md:h-28" />
         </div>
 
         <motion.h1
