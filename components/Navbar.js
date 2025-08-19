@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link'; // Assuming you're using 'Link' from next.js
 import { Menu, X } from 'react-feather'; // Assuming you're using Feather icons
 
 export default function Navbar() {
@@ -13,8 +14,8 @@ export default function Navbar() {
           StatixGrowth
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-8 text-base font-medium">
+        {/* Desktop Nav (Push to right) */}
+        <div className="hidden md:flex space-x-8 text-base font-medium ml-auto">
           <Link href="/" className="hover:text-blue-400">Home</Link>
           <Link href="/about" className="hover:text-blue-400">About</Link>
           <Link href="/services" className="hover:text-blue-400">Services</Link>
@@ -47,6 +48,8 @@ export default function Navbar() {
     </nav>
   );
 }
+
+
 
 
 
