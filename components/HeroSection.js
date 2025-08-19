@@ -78,16 +78,16 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-3xl">
-        {/* Logo placeholder */}
-        <div className="flex justify-center mb-6">
-          <img src="/logo-white.png" alt="Logo" className="h-12" />
+        {/* Logo positioned at the top-left and resized */}
+        <div className="absolute top-5 left-5">
+          <img src="/logo-white.png" alt="Logo" className="h-16 md:h-20" />
         </div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl md:text-5xl font-bold leading-tight text-white mb-4"
+          className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight text-white mb-4"
         >
           Data-Powered Strategies for Next-Level Business Growth
         </motion.h1>
@@ -96,7 +96,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="mt-6 text-lg text-gray-300"
+          className="mt-6 sm:mt-4 text-lg text-gray-300"
         >
           We transform numbers into growth — empowering e-commerce, real estate,
           local services, and digital products with insights that unlock sales,
@@ -117,6 +117,7 @@ export default function HeroSection() {
     </section>
   );
 }
+
 
 
 
