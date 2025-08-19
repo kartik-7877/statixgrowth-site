@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap'); /* Import Montserrat font */
+
+/* Tailwind's base styles */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -28,7 +31,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
     --background: 224 71.4% 4.1%;
@@ -61,9 +64,12 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat globally */
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat globally */
   }
 }
+
 
