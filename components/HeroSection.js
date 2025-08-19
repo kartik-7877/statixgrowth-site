@@ -84,7 +84,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight text-white mb-4"
+          className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight text-white mb-4 font-[Montserrat]"
         >
           Data-Powered Strategies for Next-Level Business Growth
         </motion.h1>
@@ -93,7 +93,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="mt-6 sm:mt-4 text-lg text-gray-300"
+          className="mt-6 sm:mt-4 text-lg text-gray-300 font-[Montserrat]"
         >
           We transform numbers into growth — empowering e-commerce, real estate,
           local services, and digital products with insights that unlock sales,
@@ -117,6 +117,7 @@ export default function HeroSection() {
     </section>
   );
 }
+
 
 
 
