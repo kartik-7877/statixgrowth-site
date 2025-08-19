@@ -1,7 +1,3 @@
-import Link from 'next/link';
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -9,9 +5,13 @@ export default function Navbar() {
   return (
     <nav className="bg-gray-900 text-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        
+        {/* Brand Title */}
+        <Link href="/" className="text-2xl font-bold tracking-wide text-blue-400">
+          StatixGrowth
+        </Link>
+
         {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-8 text-base font-medium justify-start">
+        <div className="hidden md:flex space-x-8 text-base font-medium">
           <Link href="/" className="hover:text-blue-400">Home</Link>
           <Link href="/about" className="hover:text-blue-400">About</Link>
           <Link href="/services" className="hover:text-blue-400">Services</Link>
@@ -19,12 +19,8 @@ export default function Navbar() {
           <Link href="/contact" className="hover:text-blue-400">Contact</Link>
         </div>
 
-        {/* Hamburger Menu (on mobile, aligns to the right) */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden text-white focus:outline-none"
-          aria-label="Toggle navigation menu"
-        >
+        {/* Hamburger */}
+        <button onClick={toggleMenu} className="md:hidden text-white focus:outline-none" aria-label="Toggle navigation menu">
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
@@ -44,6 +40,7 @@ export default function Navbar() {
     </nav>
   );
 }
+
 
 
 
