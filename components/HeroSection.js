@@ -3,9 +3,8 @@ import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
-  const canvasRef = useRef(null); // ✅ JS-safe (no TS generic)
+  const canvasRef = useRef(null);
 
-  // Background animation
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -28,7 +27,6 @@ export default function HeroSection() {
       ctx.fillStyle = "#14052A";
       ctx.fillRect(0, 0, width, height);
 
-      // points
       points.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
@@ -41,7 +39,6 @@ export default function HeroSection() {
         ctx.fill();
       });
 
-      // connecting lines
       for (let i = 0; i < points.length; i++) {
         for (let j = i + 1; j < points.length; j++) {
           const dx = points[i].x - points[j].x;
@@ -82,8 +79,8 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="font-display tracking-tight text-white mb-4
-                     text-3xl sm:text-4xl md:text-5xl
-                     font-semibold md:font-bold leading-[1.1]"
+                     text-2xl sm:text-3xl md:text-5xl
+                     font-semibold md:font-bold leading-[1.2]"
         >
           Data-Powered Strategies for Next-Level Business Growth
         </motion.h1>
@@ -92,7 +89,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="font-sans mt-6 sm:mt-4 text-base sm:text-lg md:text-xl text-gray-300"
+          className="font-sans mt-4 sm:mt-4 text-sm sm:text-base md:text-xl text-gray-300"
         >
           We transform numbers into growth — empowering e-commerce, real estate,
           local services, and digital products with insights that unlock sales,
@@ -103,7 +100,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mt-8"
+          className="mt-6 sm:mt-8"
         >
           <a
             href="https://kartikbhask.systeme.io/j2bebook-oto-call-ea16ec82-f57c408e"
@@ -112,7 +109,7 @@ export default function HeroSection() {
           >
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg shadow px-6 py-3 text-lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg shadow px-5 py-3 text-base sm:text-lg"
             >
               Book a Strategy Call
             </Button>
@@ -122,6 +119,7 @@ export default function HeroSection() {
     </section>
   );
 }
+
 
 
 
