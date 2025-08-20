@@ -3,13 +3,15 @@ import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const canvasRef = useRef(null); // ✅ JS-safe (no TS generic)
 
   // Background animation
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas?.getContext("2d");
-    if (!canvas || !ctx) return;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
 
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
@@ -23,7 +25,7 @@ export default function HeroSection() {
 
     function draw() {
       ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = "#14052A"; // keep background dark for contrast
+      ctx.fillStyle = "#14052A";
       ctx.fillRect(0, 0, width, height);
 
       // points
@@ -57,6 +59,7 @@ export default function HeroSection() {
 
       requestAnimationFrame(draw);
     }
+
     draw();
 
     const handleResize = () => {
@@ -68,7 +71,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden font-[Montserrat]">
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Background Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
@@ -78,7 +81,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-foreground mb-4"
+          className="font-display tracking-tight text-white mb-4
+                     text-3xl sm:text-4xl md:text-6xl
+                     font-semibold md:font-bold leading-[1.1]"
         >
           Data-Powered Strategies for Next-Level Business Growth
         </motion.h1>
@@ -87,7 +92,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-muted-foreground"
+          className="font-sans mt-6 sm:mt-4 text-base sm:text-lg text-gray-300"
         >
           We transform numbers into growth — empowering e-commerce, real estate,
           local services, and digital products with insights that unlock sales,
