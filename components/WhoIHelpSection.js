@@ -34,7 +34,7 @@ export default function WhoIHelp() {
     <section
       className="relative w-full h-auto md:h-screen flex items-center justify-center overflow-hidden py-16 sm:py-20 md:py-0 text-white"
       style={{
-        backgroundColor: "#0A0A1A",
+        backgroundColor: "#14052A",  // ✅ Updated to match HeroSection
         backgroundImage: `
           radial-gradient(rgba(0, 200, 255, 0.15) 1px, transparent 1px),
           radial-gradient(rgba(0, 200, 255, 0.15) 1px, transparent 1px)
@@ -94,6 +94,7 @@ export default function WhoIHelp() {
     </section>
   );
 }
+
 
 
 
