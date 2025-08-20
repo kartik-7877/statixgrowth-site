@@ -30,9 +30,8 @@ export default function WhoIHelp() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="font-display tracking-tight text-white mb-4
-                     text-2xl sm:text-3xl md:text-5xl
-                     font-semibold md:font-bold leading-[1.2]"
+          className="font-display tracking-tight text-white mb-4 
+                     text-2xl sm:text-3xl md:text-5xl font-semibold md:font-bold leading-[1.2]"
         >
           Who I Help!
         </motion.h2>
@@ -43,7 +42,7 @@ export default function WhoIHelp() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
           viewport={{ once: true }}
-          className="font-sans mt-4 sm:mt-4 text-sm sm:text-base md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
+          className="font-sans mt-4 sm:mt-4 text-sm sm:text-base md:text-xl text-gray-300"
         >
           Turning insights into growth across multiple markets.
         </motion.p>
@@ -72,6 +71,7 @@ export default function WhoIHelp() {
     </section>
   );
 }
+
 
 
 
