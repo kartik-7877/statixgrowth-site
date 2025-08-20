@@ -1,99 +1,125 @@
 import { motion } from "framer-motion";
-import { ShoppingCart, Home, Store, Lightbulb, MoreHorizontal } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { Button } from "@/components/ui/button";
 
-export default function WhoIHelp() {
-  const categories = [
-    {
-      icon: ShoppingCart,
-      title: "E-commerce Stores",
-      description: "Boost sales & retention",
-    },
-    {
-      icon: Home,
-      title: "Real Estate Agencies",
-      description: "Generate qualified leads",
-    },
-    {
-      icon: Store,
-      title: "Local Service Businesses",
-      description: "Win more clients",
-    },
-    {
-      icon: Lightbulb,
-      title: "Digital Product Creators",
-      description: "Scale revenue streams",
-    },
-    {
-      icon: MoreHorizontal,
-      title: "More Markets",
-      description: "Adaptable solutions for every industry",
-    },
-  ];
+export default function HeroSection() {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    const points = Array.from({ length: 50 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: (Math.random() - 0.5) * 0.5,
+    }));
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = "#14052A";
+      ctx.fillRect(0, 0, width, height);
+
+      points.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(0, 200, 255, 0.8)";
+        ctx.fill();
+      });
+
+      for (let i = 0; i < points.length; i++) {
+        for (let j = i + 1; j < points.length; j++) {
+          const dx = points[i].x - points[j].x;
+          const dy = points[i].y - points[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 150) {
+            ctx.beginPath();
+            ctx.moveTo(points[i].x, points[i].y);
+            ctx.lineTo(points[j].x, points[j].y);
+            ctx.strokeStyle = `rgba(0, 200, 255, ${1 - dist / 150})`;
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+
+    const handleResize = () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <section
-      className="relative w-full h-auto md:h-screen flex items-center justify-center overflow-hidden py-16 sm:py-20 md:py-0 text-white"
-      style={{
-        backgroundColor: "#1A0B35", // updated lighter shade
-        backgroundImage: `
-          radial-gradient(rgba(0, 200, 255, 0.15) 1px, transparent 1px),
-          radial-gradient(rgba(0, 200, 255, 0.15) 1px, transparent 1px)
-        `,
-        backgroundSize: "40px 40px",
-        backgroundPosition: "0 0, 20px 20px",
-      }}
-    >
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center">
-        {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="font-display tracking-tight text-white mb-4
-                     text-2xl sm:text-3xl md:text-5xl font-semibold md:font-bold"
-        >
-          Who I Help!
-        </motion.h2>
+    <section className="relative w-full h-[60vh] md:h-screen flex items-center justify-center overflow-hidden py-4 sm:py-6 md:py-0">
+      {/* Background Canvas */}
+      <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
-        {/* Subheading */}
+      {/* Content */}
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-3xl">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="font-display tracking-tight text-white mb-4
+                     text-2xl sm:text-3xl md:text-5xl
+                     font-semibold md:font-bold leading-[1.2]"
+        >
+          Data-Powered Strategies for Next-Level Business Growth
+        </motion.h1>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="font-sans text-sm sm:text-base md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="font-sans mt-4 sm:mt-4 text-sm sm:text-base md:text-xl text-gray-300"
         >
-          Turning insights into growth across multiple markets.
+          We transform numbers into growth — empowering e-commerce, real estate,
+          local services, and digital products with insights that unlock sales,
+          leads, and sustainable success.
         </motion.p>
 
-        {/* Categories Grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8"
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="mt-6 sm:mt-8"
         >
-          {categories.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center text-center"
+          <a
+            href="https://kartikbhask.systeme.io/j2bebook-oto-call-ea16ec82-f57c408e"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg shadow px-5 py-3 text-base sm:text-lg"
             >
-              <item.icon className="w-10 h-10 sm:w-12 sm:h-12 text-cyan-400 mb-3" />
-              <h3 className="font-display font-semibold text-base sm:text-lg text-white mb-1">
-                {item.title}
-              </h3>
-              <p className="font-sans text-xs sm:text-sm text-gray-400">
-                {item.description}
-              </p>
-            </div>
-          ))}
+              Book a Strategy Call
+            </Button>
+          </a>
         </motion.div>
       </div>
     </section>
   );
 }
+
 
 
 
