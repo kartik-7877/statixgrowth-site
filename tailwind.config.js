@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Montserrat", "sans-serif"],           // body font
-        display: ["'Playfair Display'", "serif"],     // heading font
+        sans: ["var(--font-sans)", "sans-serif"],        // body font (Montserrat)
+        display: ["var(--font-display)", "serif"],       // heading font (Playfair Display)
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -62,3 +62,4 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 };
+
