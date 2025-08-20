@@ -82,7 +82,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="font-display tracking-tight text-white mb-4
-                     text-3xl sm:text-4xl md:text-6xl
+                     text-3xl sm:text-4xl md:text-5xl
                      font-semibold md:font-bold leading-[1.1]"
         >
           Data-Powered Strategies for Next-Level Business Growth
@@ -92,7 +92,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="font-sans mt-6 sm:mt-4 text-base sm:text-lg text-gray-300"
+          className="font-sans mt-6 sm:mt-4 text-base sm:text-lg md:text-xl text-gray-300"
         >
           We transform numbers into growth — empowering e-commerce, real estate,
           local services, and digital products with insights that unlock sales,
@@ -112,7 +112,7 @@ export default function HeroSection() {
           >
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg shadow px-6 py-3"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg shadow px-6 py-3 text-lg"
             >
               Book a Strategy Call
             </Button>
@@ -122,6 +122,7 @@ export default function HeroSection() {
     </section>
   );
 }
+
 
 
 
