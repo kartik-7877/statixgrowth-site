@@ -32,7 +32,7 @@ export default function WhoIHelp() {
 
   return (
     <section
-      className="relative w-full py-16 sm:py-20 md:py-24 text-white"
+      className="relative w-full h-auto md:h-screen flex items-center justify-center overflow-hidden py-16 sm:py-20 md:py-0 text-white"
       style={{
         backgroundColor: "#0A0A1A",
         backgroundImage: `
