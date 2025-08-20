@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap'); /* Import Montserrat font */
-
 /* Tailwind's base styles */
 @layer base {
   :root {
@@ -64,12 +62,8 @@
 @layer base {
   * {
     @apply border-border;
-    font-family: 'Montserrat', sans-serif; /* Apply Montserrat globally */
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Montserrat', sans-serif; /* Apply Montserrat globally */
   }
 }
-
-
