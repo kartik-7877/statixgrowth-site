@@ -68,7 +68,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden py-12 sm:py-16 md:py-20">
+    <section className="relative w-full min-h-[78vh] md:min-h-0 md:h-screen flex items-center justify-center overflow-hidden py-8 sm:py-10 md:py-0">
       {/* Background Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
@@ -119,6 +119,7 @@ export default function HeroSection() {
     </section>
   );
 }
+
 
 
 
