@@ -44,6 +44,7 @@ export default function HeroSection() {
           const dx = points[i].x - points[j].x;
           const dy = points[i].y - points[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
+
           if (dist < 150) {
             ctx.beginPath();
             ctx.moveTo(points[i].x, points[i].y);
@@ -119,6 +120,7 @@ export default function HeroSection() {
     </section>
   );
 }
+
 
 
 
