@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"], // Body font
-        display: ["'Playfair Display'", "serif"], // Elegant heading font
+        sans: ["Montserrat", "sans-serif"],           // body font
+        display: ["'Playfair Display'", "serif"],     // heading font
       },
       borderRadius: {
         lg: 'var(--radius)',
