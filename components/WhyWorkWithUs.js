@@ -1,17 +1,40 @@
 import { LayoutDashboard, Cog, TrendingUp, Handshake } from "lucide-react";
 
 export default function WhyWorkWithUs() {
-  const iconSize = "w-12 h-12 sm:w-12 sm:h-12 md:w-12 md:h-12"; // Adjusted to match the icon size in WhoIHelpSection
+  const iconSize = "w-12 h-12"; // consistent size across breakpoints
+
+  const features = [
+    {
+      Icon: LayoutDashboard,
+      title: <>Actionable <br className="hidden sm:block" /> Dashboards</>,
+      text: "Clear insights dashboards to drive decisions.",
+    },
+    {
+      Icon: Cog,
+      title: <>Automation <br className="hidden sm:block" /> That Saves Hours</>,
+      text: "Automate tasks to reclaim your time.",
+    },
+    {
+      Icon: TrendingUp,
+      title: <>Proven Growth <br className="hidden sm:block" /> Results</>,
+      text: "Results backed by data-driven success.",
+    },
+    {
+      Icon: Handshake,
+      title: <>Hands-On <br className="hidden sm:block" /> Partnership</>,
+      text: "Dedicated collaboration for your goals.",
+    },
+  ];
 
   return (
     <section
       className="
         relative w-full overflow-hidden
-        bg-[#0b0b2e] 
+        bg-[#0b0b2e]
         py-16 sm:py-20 md:py-24
       "
     >
-      {/* dotted background like hero */}
+      {/* dotted background */}
       <div
         aria-hidden="true"
         className="
@@ -22,7 +45,6 @@ export default function WhyWorkWithUs() {
           [background-position:0_0,20px_20px]
         "
       />
-
       {/* soft cyan glow */}
       <div
         aria-hidden="true"
@@ -35,7 +57,7 @@ export default function WhyWorkWithUs() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
-        {/* Main Heading */}
+        {/* Heading */}
         <h2
           className="
             font-display tracking-tight text-white mb-4
@@ -46,7 +68,6 @@ export default function WhyWorkWithUs() {
           Why Work With Us
         </h2>
 
-        {/* Section Subheading */}
         <p
           className="
             font-sans mt-4 sm:mt-4 text-sm sm:text-base md:text-xl 
@@ -56,73 +77,45 @@ export default function WhyWorkWithUs() {
           Turning insights into growth across multiple markets.
         </p>
 
-        {/* Features Grid */}
+        {/* Grid */}
         <div
           className="
             grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4
             gap-10 sm:gap-12 md:gap-14
           "
         >
-          {/* Item 1 */}
-          <div className="flex flex-col items-center text-center">
-            <LayoutDashboard
-              className={`${iconSize} text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]`}
-              strokeWidth={2.2}
-            />
-            <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight">
-              Actionable <br className="hidden sm:block" /> Dashboards
-            </h3>
-            <p className="font-sans text-gray-300 mt-3 text-xs sm:text-sm leading-relaxed">
-              Clear insights dashboards to drive decisions.
-            </p>
-          </div>
-
-          {/* Item 2 */}
-          <div className="flex flex-col items-center text-center">
-            <Cog
-              className={`${iconSize} text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]`}
-              strokeWidth={2.2}
-            />
-            <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight">
-              Automation <br className="hidden sm:block" /> That Saves Hours
-            </h3>
-            <p className="font-sans text-gray-300 mt-3 text-xs sm:text-sm leading-relaxed">
-              Automate tasks to reclaim your time.
-            </p>
-          </div>
-
-          {/* Item 3 */}
-          <div className="flex flex-col items-center text-center">
-            <TrendingUp
-              className={`${iconSize} text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]`}
-              strokeWidth={2.2}
-            />
-            <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight">
-              Proven Growth <br className="hidden sm:block" /> Results
-            </h3>
-            <p className="font-sans text-gray-300 mt-3 text-xs sm:text-sm leading-relaxed">
-              Results backed by data-driven success.
-            </p>
-          </div>
-
-          {/* Item 4 */}
-          <div className="flex flex-col items-center text-center">
-            <Handshake
-              className={`${iconSize} text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]`}
-              strokeWidth={2.2}
-            />
-            <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight">
-              Hands-On <br className="hidden sm:block" /> Partnership
-            </h3>
-            <p className="font-sans text-gray-300 mt-3 text-xs sm:text-sm leading-relaxed">
-              Dedicated collaboration for your goals.
-            </p>
-          </div>
+          {features.map(({ Icon, title, text }, i) => (
+            <div
+              key={i}
+              className="
+                flex flex-col items-center text-center 
+                transition-transform duration-300 
+                hover:scale-[1.04]
+              "
+            >
+              <Icon
+                className={`
+                  ${iconSize} text-cyan-400 
+                  drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]
+                  transition-transform duration-300 
+                  hover:scale-110
+                `}
+                strokeWidth={2.2}
+              />
+              <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight">
+                {title}
+              </h3>
+              <p className="font-sans text-gray-300 mt-3 text-xs sm:text-sm leading-relaxed">
+                {text}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
 
 
 
