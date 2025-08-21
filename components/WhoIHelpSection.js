@@ -42,7 +42,8 @@ export default function WhoIHelp() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
           viewport={{ once: true }}
-          className="font-sans mt-4 sm:mt-4 text-sm sm:text-base md:text-xl text-gray-300"
+          className="font-sans mt-4 sm:mt-4 text-sm sm:text-base md:text-xl text-gray-300 
+                     mb-8 sm:mb-10 md:mb-12"
         >
           Turning insights into growth across multiple markets.
         </motion.p>
@@ -53,7 +54,7 @@ export default function WhoIHelp() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8 mt-2 sm:mt-4 md:mt-6"
         >
           {categories.map((item, index) => (
             <div key={index} className="flex flex-col items-center text-center">
@@ -71,6 +72,7 @@ export default function WhoIHelp() {
     </section>
   );
 }
+
 
 
 
