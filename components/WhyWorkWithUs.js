@@ -9,7 +9,7 @@ export default function WhyWorkWithUs() {
         py-16 sm:py-20 md:py-24
       "
     >
-      {/* subtle dotted bg like the hero */}
+      {/* dotted background like hero */}
       <div
         aria-hidden="true"
         className="
@@ -21,7 +21,7 @@ export default function WhyWorkWithUs() {
         "
       />
 
-      {/* soft spotlight/glow (not a rectangle) */}
+      {/* soft cyan glow */}
       <div
         aria-hidden="true"
         className="
@@ -33,135 +33,83 @@ export default function WhyWorkWithUs() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
-        {/* Heading */}
+        {/* Main Heading */}
         <h2
           className="
-            font-display text-white tracking-tight text-center
-            text-3xl sm:text-4xl md:text-5xl font-bold
+            font-display tracking-tight text-white mb-4
+            text-2xl sm:text-3xl md:text-5xl
+            font-semibold md:font-bold leading-[1.2] text-center
           "
         >
           Why Work With Us
         </h2>
 
-        {/* Subheading */}
+        {/* Section Subheading */}
         <p
           className="
-            font-sans text-gray-300 text-center
-            mt-4 sm:mt-5 md:mt-6
-            text-base sm:text-lg md:text-xl
+            font-sans mt-4 sm:mt-4 text-sm sm:text-base md:text-xl 
+            text-gray-300 text-center mb-10 sm:mb-12 md:mb-14
           "
         >
           Turning insights into growth across multiple markets.
         </p>
 
-        {/* Items */}
+        {/* Features Grid */}
         <div
           className="
-            mt-12 md:mt-16
             grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4
-            gap-10 md:gap-12
+            gap-10 sm:gap-12 md:gap-14
           "
         >
-          {/* Item 1 */}
+          {/* Item */}
           <div className="flex flex-col items-center text-center">
             <LayoutDashboard
-              className="
-                w-16 h-16 sm:w-16 sm:h-16
-                text-cyan-400
-                drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]
-              "
+              className="w-16 h-16 text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]"
               strokeWidth={2.2}
             />
-            <h3
-              className="
-                font-display text-white font-semibold
-                text-2xl sm:text-2xl md:text-3xl
-                mt-5 leading-tight
-              "
-            >
-              Actionable
-              <br className="hidden sm:block" />
-              {" "}Dashboards
+            <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight">
+              Actionable <br className="hidden sm:block" /> Dashboards
             </h3>
-            <p className="font-sans text-gray-300 mt-3 text-sm sm:text-base leading-relaxed">
+            <p className="font-sans text-gray-300 mt-3 text-xs sm:text-sm leading-relaxed">
               Clear insights dashboards to drive decisions.
             </p>
           </div>
 
-          {/* Item 2 */}
           <div className="flex flex-col items-center text-center">
             <Cog
-              className="
-                w-16 h-16 sm:w-16 sm:h-16
-                text-cyan-400
-                drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]
-              "
+              className="w-16 h-16 text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]"
               strokeWidth={2.2}
             />
-            <h3
-              className="
-                font-display text-white font-semibold
-                text-2xl sm:text-2xl md:text-3xl
-                mt-5 leading-tight
-              "
-            >
-              Automation
-              <br className="hidden sm:block" />
-              {" "}That Saves Hours
+            <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight">
+              Automation <br className="hidden sm:block" /> That Saves Hours
             </h3>
-            <p className="font-sans text-gray-300 mt-3 text-sm sm:text-base leading-relaxed">
+            <p className="font-sans text-gray-300 mt-3 text-xs sm:text-sm leading-relaxed">
               Automate tasks to reclaim your time.
             </p>
           </div>
 
-          {/* Item 3 */}
           <div className="flex flex-col items-center text-center">
             <TrendingUp
-              className="
-                w-16 h-16 sm:w-16 sm:h-16
-                text-cyan-400
-                drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]
-              "
+              className="w-16 h-16 text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]"
               strokeWidth={2.2}
             />
-            <h3
-              className="
-                font-display text-white font-semibold
-                text-2xl sm:text-2xl md:text-3xl
-                mt-5 leading-tight
-              "
-            >
-              Proven Growth
-              <br className="hidden sm:block" />
-              {" "}Results
+            <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight">
+              Proven Growth <br className="hidden sm:block" /> Results
             </h3>
-            <p className="font-sans text-gray-300 mt-3 text-sm sm:text-base leading-relaxed">
+            <p className="font-sans text-gray-300 mt-3 text-xs sm:text-sm leading-relaxed">
               Results backed by data-driven success.
             </p>
           </div>
 
-          {/* Item 4 */}
           <div className="flex flex-col items-center text-center">
             <Handshake
-              className="
-                w-16 h-16 sm:w-16 sm:h-16
-                text-cyan-400
-                drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]
-              "
+              className="w-16 h-16 text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]"
               strokeWidth={2.2}
             />
-            <h3
-              className="
-                font-display text-white font-semibold
-                text-2xl sm:text-2xl md:text-3xl
-                mt-5 leading-tight
-              "
-            >
-              Hands-On
-              <br className="hidden sm:block" />
-              {" "}Partnership
+            <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight">
+              Hands-On <br className="hidden sm:block" /> Partnership
             </h3>
-            <p className="font-sans text-gray-300 mt-3 text-sm sm:text-base leading-relaxed">
+            <p className="font-sans text-gray-300 mt-3 text-xs sm:text-sm leading-relaxed">
               Dedicated collaboration for your goals.
             </p>
           </div>
@@ -170,6 +118,7 @@ export default function WhyWorkWithUs() {
     </section>
   );
 }
+
 
 
 
