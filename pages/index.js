@@ -1,7 +1,7 @@
 import Head from "next/head";
 import HeroSection from "../components/HeroSection";
 import WhoIHelpSection from "../components/WhoIHelpSection";
-import SuccessGraph from "../components/SuccessGraph";
+import WhyWorkWithUs from "../components/WhyWorkWithUs";
 import ServicesSection from "../components/ServicesSection";
 import Footer from "../components/Footer";
 
@@ -15,12 +15,13 @@ export default function Home() {
 
       <HeroSection />
       <WhoIHelpSection />
-      <SuccessGraph />
+      <WhyWorkWithUs />
       <ServicesSection />
       <Footer />
     </>
   );
 }
+
 
 
 
