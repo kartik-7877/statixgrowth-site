@@ -1,7 +1,7 @@
 import { LayoutDashboard, Cog, TrendingUp, Handshake } from "lucide-react";
 
 export default function WhyWorkWithUs() {
-  const iconSize = "w-11 h-11 md:w-12 md:h-12";
+  const iconSize = "w-12 h-12 sm:w-12 sm:h-12 md:w-12 md:h-12"; // Adjusted to match the icon size in WhoIHelpSection
 
   return (
     <section
@@ -63,7 +63,7 @@ export default function WhyWorkWithUs() {
             gap-10 sm:gap-12 md:gap-14
           "
         >
-          {/* Item */}
+          {/* Item 1 */}
           <div className="flex flex-col items-center text-center">
             <LayoutDashboard
               className={`${iconSize} text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]`}
@@ -77,6 +77,7 @@ export default function WhyWorkWithUs() {
             </p>
           </div>
 
+          {/* Item 2 */}
           <div className="flex flex-col items-center text-center">
             <Cog
               className={`${iconSize} text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]`}
@@ -90,6 +91,7 @@ export default function WhyWorkWithUs() {
             </p>
           </div>
 
+          {/* Item 3 */}
           <div className="flex flex-col items-center text-center">
             <TrendingUp
               className={`${iconSize} text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]`}
@@ -103,6 +105,7 @@ export default function WhyWorkWithUs() {
             </p>
           </div>
 
+          {/* Item 4 */}
           <div className="flex flex-col items-center text-center">
             <Handshake
               className={`${iconSize} text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]`}
@@ -120,6 +123,7 @@ export default function WhyWorkWithUs() {
     </section>
   );
 }
+
 
 
 
