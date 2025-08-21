@@ -68,7 +68,11 @@ export default function WhoIHelp() {
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8 md:gap-10"
           >
             {categories.map((item, index) => (
-              <div key={index} className="flex flex-col items-center text-center">
+              <div
+                key={index}
+                className={`flex flex-col items-center text-center 
+                            ${index === 4 ? "col-span-2 sm:col-span-1 justify-self-center" : ""}`}
+              >
                 <item.icon className="w-10 h-10 sm:w-12 sm:h-12 text-cyan-400 mb-3" />
                 <h3 className="font-display font-semibold text-base sm:text-lg text-white mb-1">
                   {item.title}
@@ -84,6 +88,7 @@ export default function WhoIHelp() {
     </section>
   );
 }
+
 
 
 
