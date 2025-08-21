@@ -58,7 +58,7 @@ export default function WhoIHelp() {
           {categories.map((item, index) => (
             <div key={index} className="flex flex-col items-center text-center">
               <item.icon className="w-10 h-10 sm:w-12 sm:h-12 text-cyan-400 mb-3" />
-              <h3 className="font-sans font-semibold text-base sm:text-lg text-white mb-1">
+              <h3 className="font-display font-semibold text-base sm:text-lg text-white mb-1">
                 {item.title}
               </h3>
               <p className="font-sans text-xs sm:text-sm text-gray-400">
@@ -71,6 +71,7 @@ export default function WhoIHelp() {
     </section>
   );
 }
+
 
 
 
