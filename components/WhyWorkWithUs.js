@@ -1,6 +1,8 @@
 import { LayoutDashboard, Cog, TrendingUp, Handshake } from "lucide-react";
 
 export default function WhyWorkWithUs() {
+  const iconSize = "w-11 h-11 md:w-12 md:h-12";
+
   return (
     <section
       className="
@@ -64,7 +66,7 @@ export default function WhyWorkWithUs() {
           {/* Item */}
           <div className="flex flex-col items-center text-center">
             <LayoutDashboard
-              className="w-16 h-16 text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]"
+              className={`${iconSize} text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]`}
               strokeWidth={2.2}
             />
             <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight">
@@ -77,7 +79,7 @@ export default function WhyWorkWithUs() {
 
           <div className="flex flex-col items-center text-center">
             <Cog
-              className="w-16 h-16 text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]"
+              className={`${iconSize} text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]`}
               strokeWidth={2.2}
             />
             <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight">
@@ -90,7 +92,7 @@ export default function WhyWorkWithUs() {
 
           <div className="flex flex-col items-center text-center">
             <TrendingUp
-              className="w-16 h-16 text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]"
+              className={`${iconSize} text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]`}
               strokeWidth={2.2}
             />
             <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight">
@@ -103,7 +105,7 @@ export default function WhyWorkWithUs() {
 
           <div className="flex flex-col items-center text-center">
             <Handshake
-              className="w-16 h-16 text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]"
+              className={`${iconSize} text-cyan-400 drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]`}
               strokeWidth={2.2}
             />
             <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight">
@@ -118,6 +120,8 @@ export default function WhyWorkWithUs() {
     </section>
   );
 }
+
+
 
 
 
