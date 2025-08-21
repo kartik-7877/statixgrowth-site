@@ -30,7 +30,7 @@ export default function WhyWorkWithUs() {
     <section
       className="
         relative w-full overflow-hidden
-        bg-[#0b0b2e]
+        bg-[#0b0b2e]     /* background color from image */
         py-16 sm:py-20 md:py-24
       "
     >
@@ -77,11 +77,11 @@ export default function WhyWorkWithUs() {
           Turning insights into growth across multiple markets.
         </p>
 
-        {/* Grid */}
+        {/* Grid - phone becomes stacked with cards */}
         <div
           className="
             grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4
-            gap-10 sm:gap-12 md:gap-14
+            gap-6 sm:gap-10 md:gap-14
           "
         >
           {features.map(({ Icon, title, text }, i) => (
@@ -89,8 +89,10 @@ export default function WhyWorkWithUs() {
               key={i}
               className="
                 flex flex-col items-center text-center 
+                bg-[#0b0b2e]/60 rounded-2xl p-6 shadow-md
                 transition-transform duration-300 
                 hover:scale-[1.04]
+                sm:bg-transparent sm:shadow-none sm:p-0 sm:rounded-none
               "
             >
               <Icon
@@ -115,6 +117,7 @@ export default function WhyWorkWithUs() {
     </section>
   );
 }
+
 
 
 
