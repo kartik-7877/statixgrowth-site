@@ -30,66 +30,82 @@ export default function FrameworkVisual() {
   ];
 
   return (
-    <section className="w-full bg-[#0a0f1c] text-white py-16 px-6 md:px-12 lg:px-24 font-inter">
+    <section className="w-full bg-[#0a0f1c] text-white py-16 px-6 md:px-12 lg:px-24">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* LEFT SIDE CONTENT */}
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold leading-snug mb-4">
+          {/* Heading - match WhyWorkWithUs */}
+          <h2 className="font-display tracking-tight text-white mb-4 
+                         text-2xl sm:text-3xl md:text-5xl 
+                         font-semibold md:font-bold leading-[1.2]">
             How I Accelerate Sustainable Growth:{" "}
             <span className="block text-cyan-400">The 5A Data Success Framework</span>
           </h2>
-          <p className="text-gray-300 mb-8 max-w-xl">
+
+          {/* Subheading - match WhyWorkWithUs */}
+          <p className="font-sans mt-4 sm:mt-4 
+                        text-sm sm:text-base md:text-xl 
+                        text-gray-300 mb-8 max-w-xl">
             Growth doesn’t come from data alone—it comes from actionable insights, 
             targeted improvement, and a proactive approach. My proven 5A framework 
             is designed to turn raw numbers into measurable, real-world impact for every client.
           </p>
 
+          {/* Steps List */}
           <div className="space-y-6">
             {steps.map((step, i) => (
               <div key={i} className="flex items-start gap-4">
                 <div className="p-2 bg-cyan-900/40 rounded-xl">{step.icon}</div>
                 <div>
-                  <h3 className="text-lg font-semibold">{step.title}</h3>
-                  <p className="text-gray-400 text-sm">{step.text}</p>
+                  {/* Step Title - match WhyWorkWithUs feature h3 */}
+                  <h3 className="font-display text-white font-semibold 
+                                 text-base sm:text-lg leading-tight">
+                    {step.title}
+                  </h3>
+                  {/* Step Text - match WhyWorkWithUs feature p */}
+                  <p className="font-sans text-gray-400 mt-2 
+                                text-xs sm:text-sm leading-relaxed">
+                    {step.text}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* RIGHT SIDE CIRCULAR FLOW */}
+        {/* RIGHT SIDE CIRCULAR FLOW (kept unchanged) */}
         <div className="relative flex items-center justify-center">
-          <div className="relative w-[340px] h-[340px] md:w-[420px] md:h-[420px] lg:w-[480px] lg:h-[480px] rounded-full border-2 border-cyan-500/40">
+          <div className="relative w-[270px] h-[270px] md:w-[350px] md:h-[350px] lg:w-[410px] lg:h-[410px] rounded-full border-2 border-cyan-500/40">
             
             {/* Step 1 - Top */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-6 flex flex-col items-center">
               <Search className="w-8 h-8 text-cyan-400" />
-              <span className="text-sm mt-1">Audit</span>
+              <span className="font-sans text-xs sm:text-sm mt-1">Audit</span>
             </div>
 
             {/* Step 2 - Right Upper */}
             <div className="absolute right-0 top-1/4 translate-x-6 flex flex-col items-center">
               <BarChart3 className="w-8 h-8 text-cyan-400" />
-              <span className="text-sm mt-1">Analyze</span>
+              <span className="font-sans text-xs sm:text-sm mt-1">Analyze</span>
             </div>
 
             {/* Step 3 - Right Lower */}
             <div className="absolute right-1 bottom-1/4 translate-x-6 flex flex-col items-center">
               <Sliders className="w-8 h-8 text-cyan-400" />
-              <span className="text-sm mt-1">Apply</span>
+              <span className="font-sans text-xs sm:text-sm mt-1">Apply</span>
             </div>
 
             {/* Step 4 - Left Lower */}
             <div className="absolute left-0 bottom-1/4 -translate-x-6 flex flex-col items-center">
               <Play className="w-8 h-8 text-cyan-400" />
-              <span className="text-sm mt-1">Act</span>
+              <span className="font-sans text-xs sm:text-sm mt-1">Act</span>
             </div>
 
             {/* Step 5 - Left Upper */}
             <div className="absolute left-0 top-1/4 -translate-x-6 flex flex-col items-center">
               <Rocket className="w-8 h-8 text-cyan-400" />
-              <span className="text-sm mt-1">Accelerate</span>
+              <span className="font-sans text-xs sm:text-sm mt-1">Accelerate</span>
             </div>
           </div>
         </div>
