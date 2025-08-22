@@ -98,7 +98,7 @@ export default function WhyWorkWithUs() {
               <Icon
                 className={`
                   ${iconSize} text-cyan-400 
-                  drop-shadow-[0_0_18px_rgba(0,200,255,0.35)]
+                  drop-shadow-[0_0_12px_rgba(0,200,255,0.28)]  /* ✅ optimized glow */
                   transition-transform duration-300 
                   hover:scale-110
                 `}
@@ -117,6 +117,7 @@ export default function WhyWorkWithUs() {
     </section>
   );
 }
+
 
 
 
