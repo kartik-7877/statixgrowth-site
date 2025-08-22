@@ -30,7 +30,7 @@ export default function WhyWorkWithUs() {
     <section
       className="
         relative w-full overflow-hidden
-        bg-[#0b0b2e]     /* background color from image */
+        bg-[#14052A]     /* ✅ Changed to match Hero section background */
         py-16 sm:py-20 md:py-24
       "
     >
@@ -89,7 +89,7 @@ export default function WhyWorkWithUs() {
               key={i}
               className="
                 flex flex-col items-center text-center 
-                bg-[#0b0b2e]/60 rounded-2xl p-6 shadow-md
+                bg-[#14052A]/60 rounded-2xl p-6 shadow-md
                 transition-transform duration-300 
                 hover:scale-[1.04]
                 sm:bg-transparent sm:shadow-none sm:p-0 sm:rounded-none
