@@ -2,7 +2,7 @@ import Head from "next/head";
 import HeroSection from "../components/HeroSection";
 import WhoIHelpSection from "../components/WhoIHelpSection";
 import WhyWorkWithUs from "../components/WhyWorkWithUs";
-import ServicesSection from "../components/ServicesSection";
+import FrameworkVisual from "../components/FrameworkVisual";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -16,11 +16,12 @@ export default function Home() {
       <HeroSection />
       <WhoIHelpSection />
       <WhyWorkWithUs />
-      <ServicesSection />
+      <FrameworkVisual />
       <Footer />
     </>
   );
 }
+
 
 
 
