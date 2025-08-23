@@ -1,7 +1,7 @@
 import { LayoutDashboard, Cog, TrendingUp, Handshake } from "lucide-react";
 
 export default function WhyWorkWithUs() {
-  const iconSize = "w-12 h-12"; // consistent size across breakpoints
+  const iconSize = "w-12 h-12"; // consistent size
 
   const features = [
     {
@@ -48,18 +48,19 @@ export default function WhyWorkWithUs() {
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.15] 
-        [background-image:radial-gradient(rgba(0,200,255,0.18)_1px,transparent_1px)] 
-        [background-size:40px_40px] [background-position:0_0,20px_20px]"
+                   [background-image:radial-gradient(rgba(0,200,255,0.18)_1px,transparent_1px)] 
+                   [background-size:40px_40px] [background-position:0_0,20px_20px]"
       />
-
-      {/* 🔥 Removed the single big cyan glow (unbalanced) */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8">
         {/* Heading */}
-        <h2 className="font-display tracking-tight text-white mb-4 text-2xl sm:text-3xl md:text-5xl font-semibold md:font-bold leading-[1.2] text-center">
+        <h2 className="font-display tracking-tight text-white mb-4 
+                       text-2xl sm:text-3xl md:text-5xl 
+                       font-bold leading-[1.2] text-center">
           Why Work With Us
         </h2>
-        <p className="font-sans mt-4 sm:mt-4 text-sm sm:text-base md:text-xl text-gray-300 text-center mb-10 sm:mb-12 md:mb-14">
+        <p className="font-sans mt-4 text-sm sm:text-base md:text-xl 
+                      text-gray-300 text-center mb-10 sm:mb-12 md:mb-14 max-w-2xl mx-auto">
           Turning insights into growth across multiple markets.
         </p>
 
@@ -69,21 +70,31 @@ export default function WhyWorkWithUs() {
             <div
               key={i}
               className="relative flex flex-col items-center text-center 
-              bg-[#0b0b2e]/60 rounded-2xl p-6 shadow-md 
-              transition-transform duration-300 hover:scale-[1.04] 
-              sm:bg-transparent sm:shadow-none sm:p-0 sm:rounded-none"
+                         bg-[#0b0b2e]/60 rounded-2xl p-6 shadow-md 
+                         transition-transform duration-300 hover:scale-[1.05] 
+                         sm:bg-transparent sm:shadow-none sm:p-0 sm:rounded-none"
             >
-              {/* subtle glow per icon */}
+              {/* subtle glow behind */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,200,255,0.08),transparent_70%)] blur-xl rounded-2xl" />
-              
+
+              {/* Icon */}
               <Icon
-                className={`${iconSize} relative text-cyan-400 drop-shadow-[0_0_12px_rgba(0,200,255,0.25)] transition-transform duration-300 hover:scale-110`}
+                className={`${iconSize} relative text-cyan-400 
+                           drop-shadow-[0_0_12px_rgba(0,200,255,0.25)] 
+                           transition-transform duration-300 hover:scale-110`}
                 strokeWidth={2.2}
+                aria-hidden="true"
               />
-              <h3 className="font-display text-white font-semibold text-base sm:text-lg mt-5 leading-tight relative z-10">
+
+              {/* Title */}
+              <h3 className="font-display text-white font-semibold 
+                             text-base sm:text-lg mt-5 leading-tight relative z-10">
                 {title}
               </h3>
-              <p className="font-sans text-gray-300 mt-3 text-xs sm:text-sm leading-relaxed relative z-10">
+
+              {/* Description */}
+              <p className="font-sans text-gray-300 mt-3 
+                            text-xs sm:text-sm leading-relaxed relative z-10 max-w-xs">
                 {text}
               </p>
             </div>
@@ -93,6 +104,8 @@ export default function WhyWorkWithUs() {
     </section>
   );
 }
+
+
 
 
 

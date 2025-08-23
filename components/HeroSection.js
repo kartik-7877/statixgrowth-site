@@ -22,6 +22,8 @@ export default function HeroSection() {
       vy: (Math.random() - 0.5) * 0.5,
     }));
 
+    let animationId;
+
     function draw() {
       ctx.clearRect(0, 0, width, height);
       ctx.fillStyle = "#14052A";
@@ -55,7 +57,7 @@ export default function HeroSection() {
         }
       }
 
-      requestAnimationFrame(draw);
+      animationId = requestAnimationFrame(draw);
     }
 
     draw();
@@ -65,7 +67,11 @@ export default function HeroSection() {
       height = canvas.height = window.innerHeight;
     };
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationId); // ✅ stop animation on unmount
+    };
   }, []);
 
   return (
@@ -120,10 +126,4 @@ export default function HeroSection() {
     </section>
   );
 }
-
-
-
-
-
-
 

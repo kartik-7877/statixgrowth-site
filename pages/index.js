@@ -9,8 +9,17 @@ export default function Home() {
   return (
     <>
       <Head>
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>StatixGrowth</title>
+        <meta
+          name="description"
+          content="Accelerating sustainable growth with the 5A Data Success Framework."
+        />
+        <meta
+          name="keywords"
+          content="growth, data, analytics, automation, business intelligence, dashboards"
+        />
       </Head>
 
       <HeroSection />
@@ -21,6 +30,8 @@ export default function Home() {
     </>
   );
 }
+
+
 
 
 

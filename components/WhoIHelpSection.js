@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ShoppingCart, Home, Store, Lightbulb, MoreHorizontal } from "lucide-react";
 
-export default function WhoIHelp() {
+export default function WhoIHelpSection() {
   const categories = [
     { icon: ShoppingCart, title: "E-commerce Stores", description: "Boost sales & retention" },
     { icon: Home, title: "Real Estate Agencies", description: "Generate qualified leads" },
@@ -23,7 +23,6 @@ export default function WhoIHelp() {
         backgroundPosition: "0 0, 20px 20px",
       }}
     >
-      {/* Outer container keeps the dotted bg. Inner div is the rounded “card” in hero color */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 w-full">
         <div
           className="
@@ -70,10 +69,12 @@ export default function WhoIHelp() {
             {categories.map((item, index) => (
               <div
                 key={index}
-                className={`flex flex-col items-center text-center 
-                            ${index === 4 ? "col-span-2 sm:col-span-1 justify-self-center" : ""}`}
+                className="flex flex-col items-center text-center"
               >
-                <item.icon className="w-10 h-10 sm:w-12 sm:h-12 text-cyan-400 mb-3" />
+                <item.icon
+                  className="w-10 h-10 sm:w-12 sm:h-12 text-cyan-400 mb-3"
+                  aria-hidden="true"
+                />
                 <h3 className="font-display font-semibold text-base sm:text-lg text-white mb-1">
                   {item.title}
                 </h3>
@@ -88,6 +89,7 @@ export default function WhoIHelp() {
     </section>
   );
 }
+
 
 
 
