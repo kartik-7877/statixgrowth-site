@@ -1,41 +1,54 @@
-import React from "react";
-import Link from "next/link";
-
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white px-4 py-10 text-center text-sm">
-      <div className="max-w-4xl mx-auto space-y-4">
-        <p>
-          © {new Date().getFullYear()} <span className="font-semibold">statixgrowth.info</span>. All rights reserved.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-6 text-sm">
-          <Link href="/privacy-policy" className="hover:underline">
-            Privacy Policy
-          </Link>
-          <Link href="/terms" className="hover:underline">
-            Terms & Conditions
-          </Link>
-          <Link href="/refund-policy" className="hover:underline">
-            Refund & Cancellation Policy
-          </Link>
-          <Link href="/contact" className="hover:underline">
-            Contact Us
-          </Link>
+    <footer className="bg-[#0B1221] border-t border-[#1E2A44] py-10 px-6 sm:px-12 text-center md:text-left">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        {/* Left Side */}
+        <div className="space-y-2 text-gray-400 text-sm sm:text-base font-sans">
+          <p>
+            © {new Date().getFullYear()} Kartik Bhaskar <span className="text-gray-500">(StatixGrowth)</span>
+          </p>
+          <p>
+            For support:{" "}
+            <a href="mailto:support@statixgrowth.info" className="underline hover:text-cyan-400 transition-colors">
+              support@statixgrowth.info
+            </a>
+          </p>
         </div>
 
-        <p>
-          For support:{" "}
-          <a href="mailto:support@statixgrowth.info" className="underline">
-            support@statixgrowth.info
+        {/* Right Side - Links */}
+        <div className="flex flex-wrap items-center justify-center md:justify-end gap-5 text-sm sm:text-base font-sans">
+          <a
+            href="https://docs.google.com/document/d/18LiUaifx-sieWYf50FTvy7KL_vJoX2DMfz5-wXogW70/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-cyan-400 transition-colors"
+          >
+            Privacy Policy
           </a>
-        </p>
-
-        <div className="text-xs opacity-70 leading-relaxed max-w-3xl mx-auto">
-          This site is not a part of the Facebook™ website or Facebook™ Inc. Additionally, this site is NOT endorsed by
-          Facebook™ in any way. FACEBOOK™ is a trademark of FACEBOOK™, Inc. As stipulated by law, we do not make any
-          guarantees about your ability to get results or earn money with our ideas, tools, or strategies. All product names,
-          logos, brands and trademarks are property of their respective owners.
+          <a
+            href="https://docs.google.com/document/d/1cGV6aVSpg10M1CiEFRjSjOmZsbkrCmDDxWh5r5zAUZQ/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-cyan-400 transition-colors"
+          >
+            Terms & Conditions
+          </a>
+          <a
+            href="https://docs.google.com/document/d/1HzQbaHacvVXYxit2XoRnZuW9xCxbrH9WmY9ld-ii8kg/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-cyan-400 transition-colors"
+          >
+            Refund Policy
+          </a>
+          <a
+            href="https://www.statixgrowth.info/contact"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-cyan-400 transition-colors"
+          >
+            Contact Us
+          </a>
         </div>
       </div>
     </footer>
