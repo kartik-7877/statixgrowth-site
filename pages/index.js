@@ -3,7 +3,8 @@ import HeroSection from "../components/HeroSection";
 import WhoIHelpSection from "../components/WhoIHelpSection";
 import WhyWorkWithUs from "../components/WhyWorkWithUs";
 import FrameworkVisual from "../components/FrameworkVisual";
-import Testimonials from "../components/Testimonials"; // ✅ added this line
+import Testimonials from "../components/Testimonials";
+import MiniBioAndServices from "../components/MiniBioAndServices"; // ✅ added
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -27,7 +28,8 @@ export default function Home() {
       <WhoIHelpSection />
       <WhyWorkWithUs />
       <FrameworkVisual />
-      <Testimonials />   {/* ✅ inserted here, before footer */}
+      <MiniBioAndServices />   {/* ✅ inserted new section here */}
+      <Testimonials />
       <Footer />
     </>
   );
