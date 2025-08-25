@@ -75,7 +75,7 @@ export default function AboutHero() {
   }, []);
 
   return (
-    <section className="relative w-full h-auto min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6">
+    <section className="relative w-full h-auto min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 py-16 sm:py-20">
       {/* Background Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
@@ -142,4 +142,5 @@ export default function AboutHero() {
     </section>
   );
 }
+
 
