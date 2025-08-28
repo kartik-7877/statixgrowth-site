@@ -18,13 +18,13 @@ export default function AboutExperienceTimeline() {
       <div className="grid grid-cols-1 lg:grid-cols-[2fr_1.4fr] gap-8 max-w-6xl mx-auto">
         {/* LEFT COLUMN – TIMELINE */}
         <div className="relative">
-          {/* Animated vertical rail */}
+          {/* Vertical rail (desktop only) */}
           <motion.div
             initial={{ height: 0 }}
             whileInView={{ height: "100%" }}
             transition={{ duration: 1, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className="absolute top-0 left-1/2 -translate-x-1/2 w-px bg-blue-500/80"
+            className="hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 w-px bg-blue-500/80"
           />
 
           <div className="space-y-6">
@@ -66,15 +66,17 @@ export default function AboutExperienceTimeline() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 viewport={{ once: true }}
-                className="grid grid-cols-[1fr_40px_1fr] gap-6 items-center"
+                className="lg:grid lg:grid-cols-[1fr_40px_1fr] lg:gap-6 lg:items-center 
+                           flex flex-col items-start text-left bg-[#101c2a]/40 p-4 rounded-xl lg:bg-transparent lg:p-0"
               >
-                {/* YEAR */}
-                <div className="text-sm lg:text-base font-semibold text-right pr-4 text-gray-200">
+                {/* YEAR (mobile: top, desktop: left) */}
+                <div className="text-sm lg:text-base font-semibold text-gray-200 
+                                mb-1 lg:mb-0 lg:text-right lg:pr-4">
                   {item.year}
                 </div>
 
-                {/* DOT */}
-                <div className="relative flex items-center justify-center">
+                {/* DOT (desktop only) */}
+                <div className="hidden lg:flex relative items-center justify-center">
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
@@ -85,7 +87,7 @@ export default function AboutExperienceTimeline() {
                 </div>
 
                 {/* CONTENT */}
-                <div className="max-w-sm text-left pl-2 sm:text-center lg:text-left">
+                <div className="max-w-sm text-left">
                   <p className="text-sm font-medium text-gray-200">{item.title}</p>
                   <p className="text-xs text-blue-300 font-medium">
                     Outcome:{" "}
@@ -147,6 +149,7 @@ export default function AboutExperienceTimeline() {
     </section>
   );
 }
+
 
 
 
