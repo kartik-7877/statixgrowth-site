@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function AboutExperienceTimeline() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [openSection, setOpenSection] = useState(null); // "timeline" | "credentials" | null
 
   const timeline = [
     {
@@ -79,36 +79,73 @@ export default function AboutExperienceTimeline() {
         </p>
       </div>
 
-      {/* ====== MOBILE: Collapsible Single Block ====== */}
-      <div className="lg:hidden max-w-md mx-auto">
+      {/* ====== MOBILE: Two Collapsibles (Timeline & Credentials) ====== */}
+      <div className="lg:hidden max-w-md mx-auto space-y-3">
+        {/* Timeline Collapsible */}
         <div className="border border-blue-500/40 rounded-xl overflow-hidden">
-          {/* Toggle button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() =>
+              setOpenSection(openSection === "timeline" ? null : "timeline")
+            }
             className="w-full flex justify-between items-center px-4 py-3 bg-[#101c2a]/60 text-left"
           >
-            <span className="font-semibold text-gray-200">
-              Timeline + Credentials
+            <span className="font-semibold text-gray-200">Timeline</span>
+            <span className="text-xl">
+              {openSection === "timeline" ? "−" : "+"}
             </span>
-            <span className="text-xl">{isOpen ? "−" : "+"}</span>
           </button>
 
-          {/* Content (timeline + credentials together) */}
-          {isOpen && (
-            <div className="px-4 py-4 space-y-6 text-sm text-gray-300 bg-[#101c2a]/40">
-              {/* Timeline */}
+          {openSection === "timeline" && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="px-4 py-4 space-y-6 text-sm text-gray-300 bg-[#101c2a]/40"
+            >
               {timeline.map((item, idx) => (
-                <div key={idx} className="border-b border-gray-700 pb-3 mb-3 last:border-0 last:pb-0 last:mb-0">
-                  <p className="text-gray-200 font-medium">{item.year} — {item.title}</p>
+                <div
+                  key={idx}
+                  className="border-b border-gray-700 pb-3 mb-3 last:border-0 last:pb-0 last:mb-0"
+                >
+                  <p className="text-gray-200 font-medium">
+                    {item.year} — {item.title}
+                  </p>
                   <p className="text-blue-300 text-xs">
                     Outcome:{" "}
                     <span className="text-blue-200">{item.outcome}</span>
                   </p>
-                  <p className="text-xs text-gray-400 italic">Tools: {item.tools}</p>
+                  <p className="text-xs text-gray-400 italic">
+                    Tools: {item.tools}
+                  </p>
                 </div>
               ))}
+            </motion.div>
+          )}
+        </div>
 
-              {/* Credentials */}
+        {/* Credentials Collapsible */}
+        <div className="border border-yellow-500/40 rounded-xl overflow-hidden">
+          <button
+            onClick={() =>
+              setOpenSection(openSection === "credentials" ? null : "credentials")
+            }
+            className="w-full flex justify-between items-center px-4 py-3 bg-[#101c2a]/60 text-left"
+          >
+            <span className="font-semibold text-gray-200">Credentials</span>
+            <span className="text-xl">
+              {openSection === "credentials" ? "−" : "+"}
+            </span>
+          </button>
+
+          {openSection === "credentials" && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="px-4 py-4 space-y-4 text-sm text-gray-300 bg-[#101c2a]/40"
+            >
               {credentials.map((block, i) => (
                 <div key={i} className="bg-[#101c2a]/50 p-3 rounded-md">
                   <h3 className="text-gray-200 font-semibold mb-1">
@@ -121,7 +158,7 @@ export default function AboutExperienceTimeline() {
                   </ul>
                 </div>
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
       </div>
@@ -200,6 +237,7 @@ export default function AboutExperienceTimeline() {
     </section>
   );
 }
+
 
 
 
