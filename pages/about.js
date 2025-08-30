@@ -5,6 +5,7 @@ import AboutStoryMission from "@/components/AboutStoryMission";
 import AboutCoreValues from "@/components/AboutCoreValues";
 import AboutExperienceTimeline from "@/components/AboutExperienceTimeline";
 import AboutTrustedBy from "../components/AboutTrustedBy"; // 👈 relative import for test
+import About5ARecap from "@/components/About5ARecap"; // 👈 new import
 
 const fadeIn = {
   hidden: { opacity: 0, y: 40 },
@@ -14,28 +15,63 @@ const fadeIn = {
 export default function AboutPage() {
   return (
     <>
-      <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <AboutHero />
       </motion.div>
 
-      <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <AboutStoryMission />
       </motion.div>
 
-      <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <AboutCoreValues />
       </motion.div>
 
-      <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <AboutExperienceTimeline />
       </motion.div>
 
-      <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
-        <AboutTrustedBy />   {/* 👌 should load now */}
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <AboutTrustedBy /> {/* 👌 should load now */}
+      </motion.div>
+
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <About5ARecap /> {/* 👌 new 5A recap section */}
       </motion.div>
     </>
   );
 }
+
 
 
 
