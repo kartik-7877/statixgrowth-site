@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Search, BarChart3, Sliders, Play, Rocket } from "lucide-react";
 
-// toggle this to true when your audit template is ready
 const SHOW_SECONDARY_CTA = false;
 
 export default function About5ARecap() {
@@ -37,7 +36,7 @@ export default function About5ARecap() {
   ];
 
   return (
-    <section className="relative z-0 bg-[#0F1A2E] text-white py-10 md:py-12"> {/* Updated background color */}
+    <section className="relative z-0 bg-[#0F1A2E] text-white py-10 md:py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading + Subheading */}
         <motion.div
@@ -56,7 +55,7 @@ export default function About5ARecap() {
           </p>
         </motion.div>
 
-        {/* Two-column layout: left = one-liners, right = compact circle */}
+        {/* Two-column layout (stacked on mobile) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* LEFT: one-line explanations */}
           <motion.div
@@ -87,13 +86,13 @@ export default function About5ARecap() {
             ))}
           </motion.div>
 
-          {/* RIGHT: reduced-radius circular flow */}
+          {/* RIGHT: circular flow */}
           <motion.div
             initial={{ opacity: 0, x: 14 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.45, delay: 0.05 }}
-            className="flex justify-center lg:justify-end mt-12 lg:mt-0"
+            className="flex justify-center lg:justify-end mt-10 lg:mt-0"
           >
             <CircularFlow5A steps={steps} />
           </motion.div>
@@ -105,14 +104,14 @@ export default function About5ARecap() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.45, delay: 0.05 }}
-          className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-center" // Centered the buttons
+          className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center gap-3 justify-center"
         >
           <Link
             href="https://kartikbhask.systeme.io/job-to-business-ebook-f337b6f0-a48c36d9"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Get a copy of the guide"
-            className="inline-flex items-center justify-center px-10 py-3 rounded-xl font-sans font-semibold bg-cyan-500 text-[#0B1220] hover:bg-cyan-400 transition-colors duration-200 text-lg" // Slightly reduced height (py-3)
+            className="inline-flex items-center justify-center px-10 py-3 rounded-xl font-sans font-semibold bg-cyan-500 text-[#0B1220] hover:bg-cyan-400 transition-colors duration-200 text-lg"
           >
             Get a copy
           </Link>
@@ -120,7 +119,7 @@ export default function About5ARecap() {
             <Link
               href="#"
               aria-label="Get the Audit Template"
-              className="inline-flex items-center justify-center px-10 py-3 rounded-xl font-sans font-semibold border border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 transition-colors duration-200 text-lg" // Slightly reduced height (py-3)
+              className="inline-flex items-center justify-center px-10 py-3 rounded-xl font-sans font-semibold border border-cyan-400 text-cyan-300 hover:bg-cyan-400/10 transition-colors duration-200 text-lg"
             >
               Get the Audit Template
             </Link>
@@ -131,7 +130,7 @@ export default function About5ARecap() {
   );
 }
 
-/* ===== Circular flow (reduced radius, same logic) ===== */
+/* ===== Optimized Circular Flow for Mobile ===== */
 function CircularFlow5A({ steps }) {
   const circleRef = useRef(null);
   const [radius, setRadius] = useState(0);
@@ -140,7 +139,7 @@ function CircularFlow5A({ steps }) {
     const updateRadius = () => {
       if (circleRef.current) {
         const { width } = circleRef.current.getBoundingClientRect();
-        setRadius(width / 2);
+        setRadius(width / 2.4); // slightly reduced radius for better spacing
       }
     };
     updateRadius();
@@ -152,11 +151,7 @@ function CircularFlow5A({ steps }) {
     <div className="relative flex items-center justify-center">
       <div
         ref={circleRef}
-        className="relative aspect-square w-[220px] md:w-[260px] lg:w-[320px] rounded-full border border-cyan-500/40"
-        style={{
-          marginTop: "90px", // Moves the circle down
-          transform: "translateX(-40px)", // Shifts the circle to the left
-        }} 
+        className="relative aspect-square w-[220px] sm:w-[240px] md:w-[280px] lg:w-[320px] rounded-full border border-cyan-500/40"
       >
         {steps.map(({ Icon, label }, i) => {
           const angle = (i * 360) / steps.length - 90;
@@ -173,13 +168,13 @@ function CircularFlow5A({ steps }) {
                 transform: "translate(-50%, -50%)",
               }}
             >
-              <div className="flex flex-col items-center justify-center w-18 h-18 md:w-20 md:h-20 rounded-full border border-cyan-400 bg-[#0a0f1c] shadow-md hover:scale-105 transition-transform duration-300">
+              <div className="flex flex-col items-center justify-center w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full border border-cyan-400 bg-[#0a0f1c] shadow-md hover:scale-105 transition-transform duration-300">
                 <Icon
-                  className="w-6 h-6 md:w-7 md:h-7 text-cyan-400"
+                  className="w-6 h-6 sm:w-6 sm:h-6 md:w-7 md:h-7 text-cyan-400"
                   strokeWidth={2.2}
                   aria-hidden="true"
                 />
-                <span className="font-sans text-[11px] sm:text-xs md:text-sm mt-1">
+                <span className="font-sans text-[11px] sm:text-xs md:text-sm mt-1 text-gray-300">
                   {label}
                 </span>
               </div>
@@ -190,6 +185,7 @@ function CircularFlow5A({ steps }) {
     </div>
   );
 }
+
 
 
 
