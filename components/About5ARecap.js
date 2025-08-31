@@ -104,7 +104,7 @@ export default function About5ARecap() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.45, delay: 0.05 }}
-          className="mt-12 md:mt-16 flex flex-col sm:flex-row items-center gap-3 justify-center"
+          className="mt-16 md:mt-16 flex flex-col sm:flex-row items-center gap-3 justify-center"
         >
           <Link
             href="https://kartikbhask.systeme.io/job-to-business-ebook-f337b6f0-a48c36d9"
