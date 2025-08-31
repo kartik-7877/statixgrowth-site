@@ -92,7 +92,7 @@ export default function About5ARecap() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.45, delay: 0.05 }}
-            className="flex justify-center lg:mt-[80px]"
+            className="flex justify-center mt-10 lg:mt-[80px]"
           >
             <CircularFlow5A steps={steps} />
           </motion.div>
