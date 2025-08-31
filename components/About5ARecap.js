@@ -63,7 +63,7 @@ export default function About5ARecap() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.45 }}
-            className="space-y-4"
+            className="space-y-4 mt-6 md:mt-8"
           >
             {steps.map(({ Icon, label, copy }, i) => (
               <div
@@ -92,7 +92,7 @@ export default function About5ARecap() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.45, delay: 0.05 }}
-            className="flex justify-center lg:justify-end mt-10 lg:mt-0"
+            className="flex justify-center lg:mt-[60px]"
           >
             <CircularFlow5A steps={steps} />
           </motion.div>
@@ -104,7 +104,7 @@ export default function About5ARecap() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.45, delay: 0.05 }}
-          className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center gap-3 justify-center"
+          className="mt-12 md:mt-16 flex flex-col sm:flex-row items-center gap-3 justify-center"
         >
           <Link
             href="https://kartikbhask.systeme.io/job-to-business-ebook-f337b6f0-a48c36d9"
@@ -115,6 +115,7 @@ export default function About5ARecap() {
           >
             Get a copy
           </Link>
+
           {SHOW_SECONDARY_CTA && (
             <Link
               href="#"
@@ -130,7 +131,7 @@ export default function About5ARecap() {
   );
 }
 
-/* ===== Optimized Circular Flow for Mobile (matches Home) ===== */
+/* ===== Circular Flow Component (Home-style, reused here) ===== */
 function CircularFlow5A({ steps }) {
   const circleRef = useRef(null);
   const [radius, setRadius] = useState(0);
@@ -139,7 +140,6 @@ function CircularFlow5A({ steps }) {
     const updateRadius = () => {
       if (circleRef.current) {
         const { width } = circleRef.current.getBoundingClientRect();
-        // PHONE VIEW: match Home graph (full half-width radius)
         setRadius(width / 2);
       }
     };
@@ -152,8 +152,8 @@ function CircularFlow5A({ steps }) {
     <div className="relative flex items-center justify-center">
       <div
         ref={circleRef}
-        // PHONE VIEW: match Home graph size; keep sm/md/lg as before
-        className="relative aspect-square w-[270px] sm:w-[240px] md:w-[280px] lg:w-[320px] rounded-full border border-cyan-500/40"
+        className="relative aspect-square w-[270px] md:w-[350px] lg:w-[410px] 
+                   rounded-full border border-cyan-500/40"
       >
         {steps.map(({ Icon, label }, i) => {
           const angle = (i * 360) / steps.length - 90;
@@ -170,14 +170,16 @@ function CircularFlow5A({ steps }) {
                 transform: "translate(-50%, -50%)",
               }}
             >
-              {/* PHONE VIEW: 80x80 badges; keep sm/md overrides intact */}
-              <div className="flex flex-col items-center justify-center w-20 h-20 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full border border-cyan-400 bg-[#0a0f1c] shadow-md hover:scale-105 transition-transform duration-300">
+              <div className="flex flex-col items-center justify-center 
+                              w-20 h-20 rounded-full border border-cyan-400
+                              bg-[#0a0f1c] shadow-md hover:scale-105 
+                              transition-transform duration-300">
                 <Icon
-                  className="w-7 h-7 sm:w-6 sm:h-6 md:w-7 md:h-7 text-cyan-400"
+                  className="w-7 h-7 text-cyan-400"
                   strokeWidth={2.2}
                   aria-hidden="true"
                 />
-                <span className="font-sans text-xs md:text-sm mt-1 text-gray-300">
+                <span className="font-sans text-xs sm:text-sm mt-1 text-gray-300">
                   {label}
                 </span>
               </div>
@@ -188,6 +190,9 @@ function CircularFlow5A({ steps }) {
     </div>
   );
 }
+
+
+
 
 
 
