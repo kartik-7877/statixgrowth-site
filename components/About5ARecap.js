@@ -130,7 +130,7 @@ export default function About5ARecap() {
   );
 }
 
-/* ===== Optimized Circular Flow for Mobile ===== */
+/* ===== Optimized Circular Flow for Mobile (matches Home) ===== */
 function CircularFlow5A({ steps }) {
   const circleRef = useRef(null);
   const [radius, setRadius] = useState(0);
@@ -139,7 +139,8 @@ function CircularFlow5A({ steps }) {
     const updateRadius = () => {
       if (circleRef.current) {
         const { width } = circleRef.current.getBoundingClientRect();
-        setRadius(width / 2.4); // slightly reduced radius for better spacing
+        // PHONE VIEW: match Home graph (full half-width radius)
+        setRadius(width / 2);
       }
     };
     updateRadius();
@@ -151,7 +152,8 @@ function CircularFlow5A({ steps }) {
     <div className="relative flex items-center justify-center">
       <div
         ref={circleRef}
-        className="relative aspect-square w-[220px] sm:w-[240px] md:w-[280px] lg:w-[320px] rounded-full border border-cyan-500/40"
+        // PHONE VIEW: match Home graph size; keep sm/md/lg as before
+        className="relative aspect-square w-[270px] sm:w-[240px] md:w-[280px] lg:w-[320px] rounded-full border border-cyan-500/40"
       >
         {steps.map(({ Icon, label }, i) => {
           const angle = (i * 360) / steps.length - 90;
@@ -168,13 +170,14 @@ function CircularFlow5A({ steps }) {
                 transform: "translate(-50%, -50%)",
               }}
             >
-              <div className="flex flex-col items-center justify-center w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full border border-cyan-400 bg-[#0a0f1c] shadow-md hover:scale-105 transition-transform duration-300">
+              {/* PHONE VIEW: 80x80 badges; keep sm/md overrides intact */}
+              <div className="flex flex-col items-center justify-center w-20 h-20 sm:w-18 sm:h-18 md:w-20 md:h-20 rounded-full border border-cyan-400 bg-[#0a0f1c] shadow-md hover:scale-105 transition-transform duration-300">
                 <Icon
-                  className="w-6 h-6 sm:w-6 sm:h-6 md:w-7 md:h-7 text-cyan-400"
+                  className="w-7 h-7 sm:w-6 sm:h-6 md:w-7 md:h-7 text-cyan-400"
                   strokeWidth={2.2}
                   aria-hidden="true"
                 />
-                <span className="font-sans text-[11px] sm:text-xs md:text-sm mt-1 text-gray-300">
+                <span className="font-sans text-xs md:text-sm mt-1 text-gray-300">
                   {label}
                 </span>
               </div>
@@ -185,6 +188,7 @@ function CircularFlow5A({ steps }) {
     </div>
   );
 }
+
 
 
 
