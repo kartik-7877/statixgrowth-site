@@ -6,6 +6,7 @@ import AboutCoreValues from "@/components/AboutCoreValues";
 import AboutExperienceTimeline from "@/components/AboutExperienceTimeline";
 import AboutTrustedBy from "../components/AboutTrustedBy"; // 👈 relative import for test
 import About5ARecap from "@/components/About5ARecap"; // 👈 new import
+import AboutTeamSection from "@/components/AboutTeamSection"; // 👈 added import
 
 const fadeIn = {
   hidden: { opacity: 0, y: 40 },
@@ -60,6 +61,16 @@ export default function AboutPage() {
         <AboutTrustedBy /> {/* 👌 should load now */}
       </motion.div>
 
+      {/* ✅ Added AboutTeamSection here */}
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <AboutTeamSection />
+      </motion.div>
+
       <motion.div
         variants={fadeIn}
         initial="hidden"
@@ -71,6 +82,8 @@ export default function AboutPage() {
     </>
   );
 }
+
+
 
 
 
