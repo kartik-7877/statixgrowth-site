@@ -8,7 +8,7 @@ const fadeInUp = {
 
 export default function AboutFinalCTA() {
   return (
-    <section className="py-10 sm:py-16 bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center rounded-2xl shadow-xl hover:shadow-2xl transition max-w-5xl mx-auto mt-10 sm:mt-12 mb-12 sm:mb-16 px-6 font-sans">
+    <section className="py-10 sm:py-16 bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-center rounded-2xl shadow-xl hover:shadow-2xl transition max-w-5xl mx-auto mt-10 sm:mt-12 mb-12 sm:mb-16 px-4 sm:px-6 font-sans">
       <motion.h2
         variants={fadeInUp}
         initial="hidden"
@@ -43,6 +43,7 @@ export default function AboutFinalCTA() {
     </section>
   );
 }
+
 
 
 
