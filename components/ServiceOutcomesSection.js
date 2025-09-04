@@ -16,7 +16,7 @@ export default function ServiceOutcomesSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Icon + Title */}
         <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left"
+          className="flex items-center justify-center gap-3 text-center"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
@@ -56,7 +56,10 @@ export default function ServiceOutcomesSection() {
             <li>A clear 1-page roadmap linking KPIs, targets, and owners.</li>
             <li>Simple dashboards to answer key business questions at a glance.</li>
             <li>Automations that remove repetitive work and reduce errors.</li>
-            <li>Stakeholder alignment on a 90-day build order tied to growth and efficiency.</li>
+            <li>
+              Stakeholder alignment on a 90-day build order tied to growth and
+              efficiency.
+            </li>
           </ul>
         </motion.div>
 
