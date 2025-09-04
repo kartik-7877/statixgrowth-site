@@ -47,7 +47,7 @@ export default function ServiceHeroSection() {
               href="https://kartikbhask.systeme.io/j2bebook-oto-call-ea16ec82-f57c408e"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 text-base sm:text-lg font-sans font-semibold text-white bg-[#06B6D4] rounded-2xl shadow-md hover:bg-cyan-500 transition-colors"
+              className="px-6 py-3 w-full sm:w-auto text-base sm:text-lg font-sans font-semibold text-white bg-[#06B6D4] rounded-2xl shadow-md hover:bg-cyan-500 transition-colors text-center"
             >
               Book a Strategy Call
             </Link>
@@ -57,7 +57,7 @@ export default function ServiceHeroSection() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href="#"
-              className="px-6 py-3 text-base sm:text-lg font-sans font-semibold text-white border border-gray-500 rounded-2xl hover:bg-white/10 transition-colors"
+              className="px-6 py-3 w-full sm:w-auto text-base sm:text-lg font-sans font-semibold text-white border border-gray-500 rounded-2xl hover:bg-white/10 transition-colors text-center"
             >
               Request a Data Audit
             </Link>
@@ -67,5 +67,6 @@ export default function ServiceHeroSection() {
     </section>
   );
 }
+
 
 
