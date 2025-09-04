@@ -16,14 +16,14 @@ export default function ServiceStrategySection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Icon + Title */}
         <motion.div
-          className="flex items-center justify-center gap-3 text-center"
+          className="flex items-center justify-center gap-3 text-center flex-wrap sm:flex-nowrap"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <Compass className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 text-[#06B6D4] drop-shadow-[0_0_10px_#06B6D4]" />
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl leading-[120%]">
+          <Compass className="w-12 h-12 sm:w-14 sm:h-14 text-[#06B6D4] drop-shadow-[0_0_10px_#06B6D4]" />
+          <h2 className="font-display font-bold text-2xl sm:text-4xl lg:text-5xl leading-[120%]">
             Data Strategy Sessions
           </h2>
         </motion.div>
@@ -86,4 +86,5 @@ export default function ServiceStrategySection() {
     </section>
   );
 }
+
 
