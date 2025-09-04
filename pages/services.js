@@ -3,6 +3,7 @@
 import ServiceHeroSection from "@/components/ServiceHeroSection";
 import ServiceHubOverview from "@/components/ServiceHubOverview";
 import ServiceStrategySection from "@/components/ServiceStrategySection";
+import ServiceOutcomesSection from "@/components/ServiceOutcomesSection";
 
 export default function ServicesPage() {
   return (
@@ -10,9 +11,11 @@ export default function ServicesPage() {
       <ServiceHeroSection />
       <ServiceHubOverview />
       <ServiceStrategySection />
+      <ServiceOutcomesSection />
     </>
   );
 }
+
 
 
 
