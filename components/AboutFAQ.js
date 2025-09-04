@@ -2,13 +2,9 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-// Staggered list variants
 const listContainer = {
   hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2 },
-  },
+  show: { opacity: 1, transition: { staggerChildren: 0.2 } },
 };
 
 const listItem = {
@@ -54,8 +50,10 @@ export default function AboutFAQ() {
   const toggleFAQ = (index) => setActiveIndex(activeIndex === index ? null : index);
 
   return (
-    <section className="py-16 max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+    <section className="py-12 sm:py-16 max-w-4xl mx-auto px-4 sm:px-6 font-sans text-gray-800">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">
+        Frequently Asked Questions
+      </h2>
 
       <motion.div
         variants={listContainer}
@@ -73,12 +71,16 @@ export default function AboutFAQ() {
               className="border rounded-xl shadow-sm bg-white overflow-hidden"
             >
               <button
-                className="w-full flex justify-between items-center px-6 py-4 text-left font-semibold text-lg hover:bg-gray-50 transition"
+                className="w-full flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4 text-left font-semibold text-base sm:text-lg hover:bg-gray-50 transition"
                 onClick={() => toggleFAQ(index)}
               >
                 {faq.question}
-                <motion.div initial={false} animate={{ rotate: isActive ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                  <ChevronDown className="w-6 h-6 text-gray-600" />
+                <motion.div
+                  initial={false}
+                  animate={{ rotate: isActive ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" />
                 </motion.div>
               </button>
 
@@ -90,7 +92,7 @@ export default function AboutFAQ() {
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="px-6 pb-4 text-gray-700"
+                    className="px-4 sm:px-6 pb-3 sm:pb-4 text-sm sm:text-base text-gray-700"
                   >
                     <p>{faq.answer}</p>
                   </motion.div>
@@ -103,6 +105,7 @@ export default function AboutFAQ() {
     </section>
   );
 }
+
 
 
 
