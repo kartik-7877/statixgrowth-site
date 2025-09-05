@@ -16,7 +16,7 @@ export default function ServiceProcessSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Icon + Title */}
         <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center sm:text-left"
+          className="flex flex-row items-center justify-center gap-3 text-center sm:text-left"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
@@ -94,3 +94,4 @@ export default function ServiceProcessSection() {
     </section>
   );
 }
+
