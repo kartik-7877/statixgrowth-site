@@ -78,7 +78,7 @@ export default function ServiceTimelineSection() {
 
           {/* Right: Local PNG Image with Hover Effect */}
           <motion.div
-            className="lg:col-span-2 flex justify-center lg:justify-end items-center"
+            className="lg:col-span-2 flex justify-center lg:justify-end items-center lg:pl-12 xl:pl-16"
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
@@ -107,6 +107,7 @@ export default function ServiceTimelineSection() {
     </section>
   );
 }
+
 
 
 
