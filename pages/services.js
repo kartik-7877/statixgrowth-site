@@ -1,11 +1,10 @@
-// app/services.js (or pages/services.js depending on your setup)
-
 import ServiceHeroSection from "@/components/ServiceHeroSection";
-import ServiceHubOverview from "@/components/ServiceHubOverview";
+import ServiceHubOverview from "@/components/ServiceHubOverview";   // ✅ Correct
 import ServiceStrategySection from "@/components/ServiceStrategySection";
 import ServiceOutcomesSection from "@/components/ServiceOutcomesSection";
 import ServiceDeliverablesSection from "@/components/ServiceDeliverablesSection";
-import ServiceProcessSection from "@/components/ServiceProcessSection"; // ✅ new import
+import ServiceProcessSection from "@/components/ServiceProcessSection";
+import ServiceTimelineSection from "@/components/ServiceTimelineSection"; // ✅ new
 
 export default function ServicesPage() {
   return (
@@ -15,10 +14,12 @@ export default function ServicesPage() {
       <ServiceStrategySection />
       <ServiceOutcomesSection />
       <ServiceDeliverablesSection />
-      <ServiceProcessSection />   {/* ✅ new section added */}
+      <ServiceProcessSection />
+      <ServiceTimelineSection />   {/* ✅ new section */}
     </>
   );
 }
+
 
 
 
