@@ -13,11 +13,11 @@ export default function ServiceTimelineSection() {
       className="bg-[#0B1221] text-white py-20 sm:py-28 border-t border-gray-800"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Force text to have more room than image */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+        {/* Safe grid layout: 3/5 text, 2/5 image */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
           
           {/* Left: Text Content */}
-          <div>
+          <div className="lg:col-span-3">
             <motion.div
               className="text-center lg:text-left"
               variants={fadeInUp}
@@ -78,7 +78,7 @@ export default function ServiceTimelineSection() {
 
           {/* Right: Local PNG Image with Hover Effect */}
           <motion.div
-            className="flex justify-center lg:justify-end items-center"
+            className="lg:col-span-2 flex justify-center lg:justify-end items-center"
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
