@@ -4,7 +4,6 @@
 
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/utils";
-import Link from "next/link";
 import Image from "next/image";
 
 export default function ServiceTimelineSection() {
@@ -14,7 +13,7 @@ export default function ServiceTimelineSection() {
       className="bg-[#0B1221] text-white py-20 sm:py-28 border-t border-gray-800"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:items-center">
           {/* Left: Text Content */}
           <div>
             <motion.div
@@ -77,7 +76,7 @@ export default function ServiceTimelineSection() {
 
           {/* Right: Local PNG Image with Hover Effect */}
           <motion.div
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end items-center"
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
@@ -94,9 +93,9 @@ export default function ServiceTimelineSection() {
               <Image
                 src="/Timline.png" // file inside public/
                 alt="Timeline Dashboard"
-                width={500} // increased size
+                width={500}
                 height={350}
-                className="rounded-2xl w-[340px] sm:w-[420px] lg:w-[480px] h-auto"
+                className="rounded-2xl w-[300px] sm:w-[380px] lg:w-[400px] h-auto"
                 priority
               />
             </motion.div>
@@ -106,6 +105,7 @@ export default function ServiceTimelineSection() {
     </section>
   );
 }
+
 
 
 
